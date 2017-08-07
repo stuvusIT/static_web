@@ -1,0 +1,9 @@
+---
+- name: Copy Files
+  unarchive:
+    src: "{{ inventory_hostname }}/website"
+    dest: /var/www/website
+    directory_mode: yes
+    mode: 0755
+    owner: www-data
+    group: www-data
