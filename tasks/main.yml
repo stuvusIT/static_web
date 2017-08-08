@@ -1,11 +1,12 @@
 ---
-- name: Copy Files
-  unarchive:
-    src: "{{ item.from }}/"
+- name: Clone websites
+  git:
+    accept_hostkey: yes
+    clone: yes
+    update: yes
     dest: "{{ item.to }}"
-    directory_mode: yes
-    mode: 0755
-    owner: www-data
-    group: www-data
+    force: yes
+    key_file: "{{ item.keyfile | default(None) }}"
+    repo: "{{ item.src }}"
   with_items: "{{ static_web_folder_to_copy }}"
 
