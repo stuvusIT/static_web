@@ -1,9 +1,11 @@
 ---
 - name: Copy Files
   unarchive:
-    src: "{{ inventory_hostname }}/website"
-    dest: /var/www/website
+    src: "{{ item.from }}/"
+    dest: "{{ item.to }}"
     directory_mode: yes
     mode: 0755
     owner: www-data
     group: www-data
+  with_items: "{{ static_web_folder_to_copy }}"
+
