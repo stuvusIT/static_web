@@ -19,5 +19,7 @@ galaxy_info:
     - stuvus
     - static
     - website
+    - git
+    - repository
 
 dependencies: []
