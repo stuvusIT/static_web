@@ -1,27 +1,11 @@
 ---
-- name: Create key directory
-  file:
-    mode: "0700"
-    path: "/var/www/.keys/"
-    recurse: yes
-    state: directory
-
-- name: Copy keys to remote host
-  copy:
-    src: "{{ item.keyfile }}"
-    dest: "/var/www/.keys/{{ item.to }}"
-    mode: "0500"
-  with_items: "{{ static_web_folder_to_copy }}"
-  when: item.keyfile is defined
-
 - name: Clone websites
   git:
     accept_hostkey: yes
     clone: yes
     update: yes
-    dest: "/var/www/{{ item.to }}"
+    dest: "{{ item.to }}"
     force: yes
-    key_file: "{% if item.keyfile is defined %}/var/www/.keys/{{ item.to }}{% else %}{{ None }}{% endif %}"
     repo: "{{ item.src }}"
   with_items: "{{ static_web_folder_to_copy }}"
 
