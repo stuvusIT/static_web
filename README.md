@@ -40,4 +40,4 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 Inter
 
 ## Author Information
 
- * [Fritz Otlinghaus (Scriptkiddi)]https://github.com/Scriptkiddi _fritz.otlinghaus@stuvus.uni-stuttgart.de_
+ * [Fritz Otlinghaus (Scriptkiddi)](https://github.com/Scriptkiddi) _fritz.otlinghaus@stuvus.uni-stuttgart.de_
