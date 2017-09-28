@@ -1,4 +1,4 @@
-# Git repsoitory deploy
+# static web
 
 This role clones git repository to the given directory on the target server.
 
@@ -12,6 +12,8 @@ None
 | Variable name | Required | Description |
 | -------- | -------- | -------- |
 | `static_web_folder_to_copy`     | :heavy_check_mark:     | The variable contains every pair of `src` and `to` that is needed to deploy a git repository     |
+| `static_web_folder_to_copy[0].src`     | :heavy_check_mark:     | `src` variable can be anything that git allows as source |
+| `static_web_folder_to_copy[0].to`     | :heavy_check_mark:     | Path to clone the git repository to |
 
 
 ## Example Playbook
