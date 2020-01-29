@@ -5,7 +5,7 @@ This role clones git repository to the given directory on the target server.
 
 ## Requirements
 
-None 
+None
 
 ## Role Variables
 
