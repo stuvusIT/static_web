@@ -7,5 +7,10 @@
     dest: "{{ item.to }}"
     force: yes
     repo: "{{ item.src }}"
-  with_items: "{{ static_web_folder_to_copy }}"
+  loop: "{{ static_web_folder_to_copy }}"
 
+- name: Restrict .git access to root
+  file:
+    path: "{{ item.to }}/.git"
+    mode: 0700
+  loop: "{{ static_web_folder_to_copy }}"
